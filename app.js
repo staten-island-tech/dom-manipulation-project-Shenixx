@@ -21,3 +21,5 @@ console.log(button);
 //addCard()
 //clearFields()
 //addRemoveButtons()
+
+//cant use on-click
