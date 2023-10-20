@@ -15,3 +15,9 @@
 
 const button = document.getElementById("btn");
 console.log(button);
+
+
+//const Album = makeAlbum()
+//addCard()
+//clearFields()
+//addRemoveButtons()
