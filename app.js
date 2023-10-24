@@ -1,3 +1,21 @@
+const DOMSelectors = {
+    button: document.getElementById("btn"),
+    text: document.querySelector("#text"),
+    box: document.getElementById("big-black-box"),
+    points: document.getElementById(".point"),
+
+    firstName:document.querySelector(".first-name"),
+};
+console.log(DOMSelectors);
+
+function backgroundAndText(background, text) {
+    background.style.backgroundColor = "red";
+    text.textContent = "This is now a big red box";
+    text.style.fontSize = "40px";
+}
+
+backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+
 // const DOMSelectors = {
 //     form: document.querySelector("#form"),
 //     firstName:document.querySelector(".first-name"),
@@ -12,9 +30,6 @@
 //         (el) =>(el.textContent = DOMSelectors.firstName.value)
 //     );
 // });
-
-const button = document.getElementById("btn");
-console.log(button);
 
 
 //const Album = makeAlbum()
