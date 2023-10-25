@@ -2,9 +2,9 @@ const DOMSelectors = {
     button: document.getElementById("btn"),
     text: document.querySelector("#text"),
     box: document.getElementById("big-black-box"),
-    points: document.getElementById(".point"),
+    points: document.getElementById("point"),
 
-    firstName:document.querySelector(".first-name"),
+    firstName:document.querySelector("first-name"),
 };
 console.log(DOMSelectors);
 
@@ -14,15 +14,24 @@ function backgroundAndText(background, text) {
     text.style.fontSize = "40px";
 }
 
-backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+DOMSelectors.button.addEventListener("click", function(){
+    backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+})
 
-// const DOMSelectors = {
-//     form: document.querySelector("#form"),
-//     firstName:document.querySelector(".first-name"),
-//     h2s:document.querySelectorAll("h2"), 
-// };
+function changeli(){
+    let pointIndex = 1;
+    DOMSelectors.points.forEach((point) => {
+        point.addEventListener("click", function () {
+            point.textContent = `Hello I is point ${pointIndex}`;
+        });
+    });
+}
+
+changeli();
 
 // DOMSelectors.form.addEventListener("submit", function(event){
+//     backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+
 //     event.preventDefault();
 //     console.log(DOMSelectors.firstName.value);
     
@@ -31,6 +40,11 @@ backgroundAndText(DOMSelectors.box, DOMSelectors.text);
 //     );
 // });
 
+// const DOMSelectors = {
+//     form: document.querySelector("#form"),
+//     firstName:document.querySelector(".first-name"),
+//     h2s:document.querySelectorAll("h2"), 
+// };
 
 //const Album = makeAlbum()
 //addCard()
