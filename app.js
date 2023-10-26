@@ -1,33 +1,50 @@
 const DOMSelectors = {
     button: document.getElementById("btn"),
     text: document.querySelector("#text"),
-    box: document.getElementById("big-black-box"),
-    points: document.getElementById("point"),
+    box: document.getElementById("container-box"),
+    input: document.querySelector("#input"),
+    nameInput: document.getElementById("nameInput"),
+    ageInput: document.getElementById("ageInput"),
+    removeButton: document.getElementById("removeButton"),
+};  
 
-    firstName:document.querySelector("first-name"),
-};
-console.log(DOMSelectors);
+DOMSelectors.button.addEventListener("click", function () {
+    const name = nameInput.value;
+    const age = ageInput.value;
 
-function backgroundAndText(background, text) {
-    background.style.backgroundColor = "red";
-    text.textContent = "This is now a big red box";
-    text.style.fontSize = "40px";
-}
-
-DOMSelectors.button.addEventListener("click", function(){
-    backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+    DOMSelectors.box.insertAdjacentHTML("afterend", `<h2> My name is ${name} and my age is ${age} </h2>`);
+    DOMSelectors.input.value = "";
+    
 })
 
-function changeli(){
-    let pointIndex = 1;
-    DOMSelectors.points.forEach((point) => {
-        point.addEventListener("click", function () {
-            point.textContent = `Hello I is point ${pointIndex}`;
-        });
-    });
-}
+DOMSelectors.removeButton.addEventListener("click", function () {
+    const existingH2 = DOMSelectors.box.querySelector('h2');
+    if (existingH2) {
+        existingH2.remove();
+    }
+});
 
-changeli();
+// function backgroundAndText(background, text) {
+//     background.style.backgroundColor = "red";
+//     text.textContent = "This is now a big red box";
+//     text.style.fontSize = "40px";
+// }
+
+// DOMSelectors.button.addEventListener("click", function () {
+//     backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+// })
+
+// function changeli(){
+//     let pointIndex = 1;
+//     DOMSelectors.points.forEach((point) => {
+//         point.addEventListener("click", function () {
+//             point.textContent = `Hello I is point ${pointIndex}`;
+//             pointIndex++;
+//         });
+//     });
+// }
+
+// changeli();
 
 // DOMSelectors.form.addEventListener("submit", function(event){
 //     backgroundAndText(DOMSelectors.box, DOMSelectors.text);

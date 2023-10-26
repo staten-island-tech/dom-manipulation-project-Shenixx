@@ -1,4 +1,8 @@
-body{
-    background-image: url();
-    background-attachment: fixed;
+#container-box{
+    background-color: rgb(0, 0, 0);
+    font-size: 2vh;
+    color: white;
+    text-align: center;
 }
+
+
