@@ -12,17 +12,22 @@ DOMSelectors.button.addEventListener("click", function () {
     const name = nameInput.value;
     const age = ageInput.value;
 
-    DOMSelectors.box.insertAdjacentHTML("afterend", `<h2> My name is ${name} and my age is ${age} </h2>`);
-    DOMSelectors.input.value = "";
+    DOMSelectors.box.insertAdjacentHTML("afterend", `<h2 class="newInfo" > My name is ${name} and my age is ${age} </h2>  <button type="button" id="removeButton">remove</button>` );
+    DOMSelectors.nameInput.value = "";
+    DOMSelectors.ageInput.value = "";
     
-})
-
-DOMSelectors.removeButton.addEventListener("click", function () {
-    const existingH2 = DOMSelectors.box.querySelector('h2');
-    if (existingH2) {
-        existingH2.remove();
-    }
+    
+    removeButton.addEventListener("click", function () {
+        const existingH2 = DOMSelectors.box.querySelector('h2');
+        if (existingH2) {
+            existingH2.remove();
+        }
+    });
 });
+
+
+
+
 
 // function backgroundAndText(background, text) {
 //     background.style.backgroundColor = "red";
