@@ -8,24 +8,27 @@ const DOMSelectors = {
     removeButton: document.getElementById("removeButton"),
 };  
 
-DOMSelectors.button.addEventListener("click", function () {
-    const name = nameInput.value;
-    const age = ageInput.value;
+function newCard() {
+    DOMSelectors.button.addEventListener("click", function () {
+        const name = nameInput.value;
+        const age = ageInput.value;
 
-    DOMSelectors.box.insertAdjacentHTML("afterend", `<h2 class="newInfo" > My name is ${name} and my age is ${age} </h2>  <button type="button" id="removeButton">remove</button>` );
-    DOMSelectors.nameInput.value = "";
-    DOMSelectors.ageInput.value = "";
-    
-    
-    removeButton.addEventListener("click", function () {
-        const existingH2 = DOMSelectors.box.querySelector('h2');
-        if (existingH2) {
-            existingH2.remove();
-        }
-    });
+        DOMSelectors.box.insertAdjacentHTML("afterend", `<div class=newInfo> <h2 class=> My name is ${name} and my age is ${age} </h2>  <button type="removeButton" id="removeButton">remove</removeButton> </div>`  );
+        DOMSelectors.nameInput.value = "";
+        DOMSelectors.ageInput.value = "";
 });
+}
 
+function removeButton(){
+    let btns = document.querySelectorAll("newInfo")
+    btns.forEach((button)=> button.addEventListener("click", function (event){
+        console.log(event.target.parentElement)
+        })
+    );
+}
 
+newCard();
+removeButton();
 
 
 
