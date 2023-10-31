@@ -8,28 +8,39 @@ const DOMSelectors = {
     removeButton: document.getElementById("removeButton"),
 };  
 
-function newCard() {
+function makeAlbum(){
     DOMSelectors.button.addEventListener("click", function () {
         const name = nameInput.value;
         const age = ageInput.value;
-
-        DOMSelectors.box.insertAdjacentHTML("afterend", `<div class=newInfo> <h2 class=> My name is ${name} and my age is ${age} </h2>  <button type="removeButton" id="removeButton">remove</removeButton> </div>`  );
-        DOMSelectors.nameInput.value = "";
-        DOMSelectors.ageInput.value = "";
-});
+        const infoStuff = {
+            name: name,
+            age: age,
+        };
+        return infoStuff;
+    })
 }
 
-function removeButton(){
-    let btns = document.querySelectorAll("newInfo")
-    btns.forEach((button)=> button.addEventListener("click", function (event){
-        console.log(event.target.parentElement)
-        })
-    );
-}
+// function newCard() {
+//         DOMSelectors.box.insertAdjacentHTML("afterend", `<div class=newInfo> <h2 class=> My name is ${name} and my age is ${age} </h2>  
+//         <button type="removeButton" id="removeButton">remove</removeButton> </div>`);
+//         DOMSelectors.nameInput.value = "";
+//         DOMSelectors.ageInput.value = "";
+// };
 
-newCard();
-removeButton();
+function newCard() {
+    DOMSelectors.box.insertAdjacentHTML("afterend", `<div class=newInfo> <h2 class=> My name is ${name} and my age is ${age} </h2>`);}
 
+// function removeButton(){
+//     let btns = document.querySelectorAll("newInfo")
+//     btns.forEach((button)=> button.addEventListener("click", function (event){
+//         console.log(event.target.parentElement)
+//         })
+//     );
+// }
+
+
+makeAlbum()
+newCard()
 
 
 // function backgroundAndText(background, text) {
@@ -42,7 +53,7 @@ removeButton();
 //     backgroundAndText(DOMSelectors.box, DOMSelectors.text);
 // })
 
-// function changeli(){
+// function changeli(){-
 //     let pointIndex = 1;
 //     DOMSelectors.points.forEach((point) => {
 //         point.addEventListener("click", function () {
