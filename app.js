@@ -8,15 +8,18 @@ const DOMSelectors = {
     removeButton: document.getElementById("removeButton"),
 };  
 
+function getData(){
+    const name = DOMSelectors.nameInput.value;
+    const age = DOMSelectors.ageInput.value;
+    return {
+        name: name,
+        age: age,
+    };
+}
+
 function makeAlbum(){
-    
     DOMSelectors.button.addEventListener("click", function () {
-        const name = DOMSelectors.nameInput.value;
-        const age = DOMSelectors.ageInput.value;
-        return {
-            name: name,
-            age: age,
-          };
+        getData()
     })
 };
 
