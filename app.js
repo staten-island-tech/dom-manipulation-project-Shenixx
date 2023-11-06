@@ -27,7 +27,7 @@ function getData(){
 
 function newCard() {
     const data = getData();
-    DOMSelectors.box.insertAdjacentHTML("afterend", `<div class=newInfo> <h2 class=> My name is ${data.userName} and my age is ${data.userAge} </h2>  
+    DOMSelectors.box.insertAdjacentHTML("afterend", `<div class=newInfo> <h2 class=> My name is ${data.name} and my age is ${data.userAge} </h2>  
     <button type="removeButton" id="removeButton">remove</removeButton> </div>`);
     DOMSelectors.nameInput.value = "";
     DOMSelectors.ageInput.value = "";  
