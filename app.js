@@ -9,29 +9,29 @@ const DOMSelectors = {
 };  
 
 function getData(){
-    const name = DOMSelectors.nameInput.value;
-    const age = DOMSelectors.ageInput.value;
-    return {
-        name: name,
-        age: age,
-    };
+    const userName = DOMSelectors.nameInput.value;
+    const userAge = DOMSelectors.ageInput.value;
 }
 
-function makeAlbum(){
-    DOMSelectors.button.addEventListener("click", function () {
-        getData()
-    })
-};
+// function makeAlbum(){
+//         const data = getData();
+//         return {
+//             name: data.userName,
+//             age: data.userAge,
+//         }
+// };
 
 function newCard() {
-    DOMSelectors.button.addEventListener("click", function () {
-        const data = makeAlbum();
-        DOMSelectors.box.insertAdjacentHTML("afterend", `<div class=newInfo> <h2 class=> My name is ${data.name} and my age is ${data.age} </h2>  
-        <button type="removeButton" id="removeButton">remove</removeButton> </div>`);
-        DOMSelectors.nameInput.value = "";
-        DOMSelectors.ageInput.value = "";
-    })
+    const data = getData();
+    DOMSelectors.box.insertAdjacentHTML("afterend", `<div class=newInfo> <h2 class=> My name is ${data.userName} and my age is ${data.userAge} </h2>  
+    <button type="removeButton" id="removeButton">remove</removeButton> </div>`);
+    DOMSelectors.nameInput.value = "";
+    DOMSelectors.ageInput.value = "";  
 };
+
+DOMSelectors.button.addEventListener("click", function () {
+    newCard();
+});
 
 // function newCard() {
 //     DOMSelectors.box.insertAdjacentHTML("afterend", `<div class=newInfo> <h2 class=> My name is ${} and my age is $} </h2>`);}
@@ -43,10 +43,6 @@ function newCard() {
 //         })
 //     );
 // }
-
-
-makeAlbum();
-newCard()
 
 
 // function backgroundAndText(background, text) {
