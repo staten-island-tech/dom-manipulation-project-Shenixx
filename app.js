@@ -11,6 +11,10 @@ const DOMSelectors = {
 function getData(){
     const userName = DOMSelectors.nameInput.value;
     const userAge = DOMSelectors.ageInput.value;
+    return {
+        name: userName,
+        age: userAge,
+    }
 }
 
 // function makeAlbum(){
